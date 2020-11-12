@@ -1,0 +1,209 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*shrinks content to make sure that extra space falls into your defined width*/
+}
+
+html {
+  color: #555;
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+}
+
+.row {
+  max-width: 1140px;
+  /*Code helps for more responsiveness.
+   Allows the div to shrink on smaller screens*/
+  margin: 0 auto;
+  /* height: 300px; */
+  /* border: 2px solid #000; solid means a straight line */
+}
+header {
+  /* linear gradient is for adding two colors */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("assets/img/hero.jpg");
+  height: 100vh; /*vh means viewport height*/
+  /* background-size: contain; This makes the image to be contained in the screen size*/
+  background-size: cover;
+  background-position: center; /*other values are right, left, etc*/
+}
+.hero-text-box {
+  position: absolute; /*this positions elements across the screen relative to the parent-header in this case*/
+  width: 1140px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /*to center the image*/
+}
+
+h1 {
+  margin-top: 0;
+  color: #fff;
+  font-size: 240%;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px; /*amount of space btw letters*/
+  word-spacing: 4px; /*amount of space btw words*/
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 180%;
+  word-spacing: 2px;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+h3 {
+  font-size: 110%;
+  margin-bottom: 15px;
+}
+
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  padding: 10px 30px;
+  font-weight: 300;
+  text-decoration: none; /*Removes default underline and blue text*/
+  border-radius: 200px;
+  transition: background 1s, border 1s;
+}
+
+.btn-full:hover,
+.btn:active {
+  border: 1px solid #c85a02;
+  background: #964302;
+}
+
+.btn-full {
+  background-color: #fd9644;
+  border: 1px solid #fd9644;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.btn-ghost {
+  border: 1px solid #fd9644;
+  color: #fd9644;
+}
+
+.btn-ghost:hover {
+  border: 1px solid #fd9644;
+  background: #f7f7f7;
+  color: #fd9644;
+  transition: background 1.5s, border 1s, color 1.5s;
+  font-weight: 500;
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+  float: left;
+  margin-top: 20px;
+}
+
+.main-nav {
+  float: right;
+  list-style-type: none; /*Removes the bullet points of the list*/
+  margin-top: 55px;
+}
+/* To target the children of the parent ul - li */
+.main-nav li {
+  display: inline-block;
+  margin-left: 40px;
+  margin-right: 20px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+  padding: 8px 0 8px 0;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 90%;
+  border-bottom: 2px solid transparent; /*transparent makes the border transparent*/
+  transition: border-bottom 0.5s;
+}
+
+.main-nav li a:hover {
+  border-bottom: 2px solid #fd9644;
+}
+
+section {
+  padding: 80px 0;
+}
+
+.icon-big {
+  font-size: 350%;
+  margin-bottom: 20px;
+  display: block;
+  color: #fd9644;
+}
+
+.box {
+  padding: 1%;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+h2:after {
+  display: block;
+  height: 2px;
+  background-color: #fd9644;
+  content: " ";
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.long-copy {
+  text-align: center;
+}
+
+p {
+  font-weight: 350;
+}
+
+.section-meals {
+  padding: 0;
+}
+
+.meal-showcase {
+  list-style: none;
+  width: 100%;
+}
+
+.meal-showcase li {
+  display: block;
+  float: left;
+  width: 25%;
+}
+
+.meal-photo {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.meal-photo img {
+  opacity: 0.7;
+  width: 100%;
+  height: auto;
+  transform: scale(1.15);
+  transition: transform 1s, opacity 1s;
+}
+
+.meal-photo img:hover {
+  opacity: 1;
+  width: 100%;
+  height: auto;
+  transform: scale(1.03);
+}

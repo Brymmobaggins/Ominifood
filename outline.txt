@@ -1,0 +1,342 @@
+// Doing the ground work
+
+1. create folder structure
+2. create the boilerplate
+3. link styelsheet
+4. link normalize
+5. add google font
+6. in style.css add the following
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+  color: #555;
+  font-family: 'Lato', 'Arial', 'sans-serif';
+  font-size: 20px;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+}
+
+7. add grid (visit responsivegridsystem.com)
+8. create a row class
+
+.row {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+// Building the header
+
+1. clear eveything in the <body>
+2. create a header (Take the contents from the word file)
+
+<header>
+  <div class="hero-text-box">
+      <h1>Goodbye junk food.<br>Hello super healthy meals.</h1>
+      <a href="#">I'm hungry</a>
+      <a href="#">Show me more</a>
+  </div>
+</header>
+
+3. preview
+4. style the header
+
+header {
+  bg-image: url(hero.jpg);
+}
+
+5. preview
+6. set header height to 100vh
+7. preview
+8. remove marging from h1
+9. add to header
+  bg-size: cover (also try contain)
+  bg-position: center
+10. preview
+11. style the .hero-text-box
+
+.hero-text-box {
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+12. add a linear-gradient to header so it becomes 
+
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+13. add new styles to h1
+
+h1 {
+  margin: 0
+  color: #fff
+  font-size: 240%;
+  font-weight: 300
+  text-transform: uppercase
+  letter-spacing: 1px
+  word-spacing: 3px 
+}
+
+14. break the h1 text in the html file
+15. add classes to the header buttons
+
+<a class="btn btn-full" href="#">I'm hungry</a>
+<a class="btn btn-ghost" href="#">Show me more</a>
+
+16. style buttons
+
+.btn {
+  display: inline-block (explain how inline elements cant have padding and margins)
+  padding: 10px 30px
+  font-weight: 300
+  text-decoration: none
+  color: #fff
+  boder-radius: 200px
+}
+
+.btn-full {
+  bg-color: go to flatuicolors.com and select the carrot orange
+  border: 1px solid same-carrot-orange
+}
+
+.btn-ghost {
+  border: 1px solid same-carrot-orange
+}
+
+17. add margin-bottom 20px to h1
+18. move the color: #ff from .btn to .btn-full and make the .btn-ghost: the orange color
+19. explain the CSS link states, :link, :hover, :visited, :active
+20. add the :link and :visited pseudo-classes to all the btn related classes
+21. add :hover and :active states
+
+.btn:hover,
+.btn:active {
+  bg-color: use 0to255.com to get a dark shade of orange
+}
+
+// preview here
+
+.btn-full:hover,
+.btn-full:active {
+    border: 1px solid #cf6d17;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+    border: 1px solid #cf6d17;
+    color: #fff;
+}
+
+22. add transition and margin-right to .btn
+
+transition: bg-color 0.2s, border 0.2s, color 0.2s;
+margin-right: 15px;
+
+23. structure css file with commentsb as shown
+
+/* ----------------------------------------------- */
+/* BASIC SETUP */
+/* ----------------------------------------------- */
+
+See finished file for the others
+
+24 add navigation
+
+<nav>
+  <div class="row">
+      <img src="resources/img/logo-white.png" alt="Omnifood logo" class="logo">
+      <ul class="main-nav js--main-nav">
+          <li><a href="#features">Food delivery</a></li>
+          <li><a href="#works">How it works</a></li>
+          <li><a href="#cities">Our cities</a></li>
+          <li><a href="#plans">Sign up</a></li>
+      </ul>
+  </div>
+</nav>
+
+25 style logo and nav
+
+.logo {
+    height: 100px;
+    width: auto;
+    float: left;
+    margin-top: 20px;
+}
+
+/* Main navi */
+.main-nav {
+    float: right; //just this first then preview
+    list-style: none;
+    margin-top: 55px;
+}
+
+.main-nav li {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+// preview here also
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding: 8px 0;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #e67e22;
+}
+
+
+// building the features section see contents in word file
+ 
+1. html  // skip icons
+
+<section class="section-features js--section-features" id="features">
+    <div class="row">
+        <h2>Get food fast &mdash; not fast food</h2>
+        <p class="long-copy">
+            Hello, we're Omnifood, your new premium food delivery service. We know you're always busy. No time for cooking. So let us take care of that, we're really good at it, we promise!
+        </p>
+    </div>
+    
+    <div class="row">
+        <div class="col span-1-of-4 box">
+            <i class="ion-ios-infinite-outline icon-big"></i>
+            <h3>Up to 365 days/year</h3>
+            <p>
+                Never cook again! We really mean that. Our subscription plans include up to 365 days/year coverage. You can also choose to order more flexibly if that's your style.
+            </p>
+        </div>
+        <div class="col span-1-of-4 box">
+            <i class="ion-ios-stopwatch-outline icon-big"></i>
+            <h3>Ready in 20 minutes</h3>
+            <p>
+                You're only twenty minutes away from your delicious and super healthy meals delivered right to your home. We work with the best chefs in each town to ensure that you're 100% happy.
+            </p>
+        </div>
+        <div class="col span-1-of-4 box">
+            <i class="ion-ios-nutrition-outline icon-big"></i>
+            <h3>100% organic</h3>
+            <p>
+                All our vegetables are fresh, organic and local. Animals are raised without added hormones or antibiotics. Good for your health, the environment, and it also tastes better!
+            </p>
+        </div>
+        <div class="col span-1-of-4 box">
+            <i class="ion-ios-cart-outline icon-big"></i>
+            <h3>Order anything</h3>
+            <p>
+                We don't limit your creativity, which means you can order whatever you feel like. You can also choose from our menu containing over 100 delicious meals. It's up to you!
+            </p>
+        </div>
+    </div>   
+</section>
+
+show ionicons site and download the files and file structure
+
+2. link css files add icons
+3. style the section
+
+section {
+    padding: 80px 0;
+}
+
+.box {
+    padding: 1%;
+}
+
+4. restyle headings 
+
+h1,
+h2,
+h3 {
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 240%;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-size: 110%;
+    margin-bottom: 15px;
+}
+
+h2:after {
+    display: block;
+    height: 2px;
+    background-color: #e67e22;
+    content: " ";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+5. style paragraphs
+
+/* ----- PARAGRAPHS ----- */
+.long-copy {
+    line-height: 145%;
+    width: 70%;
+    margin-left: 15%;
+}
+
+.box p {
+    font-size: 90%;
+    line-height: 145%;
+}
+
+6. style icons
+
+/* ----- ICONS ----- */
+.icon-big {
+    font-size: 350%;
+    display: block;
+    color: #e67e22;
+    margin-bottom: 10px;
+}
+
+.icon-small {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    color: #e67e22;
+    font-size: 120%;
+    margin-right: 10px;
+    
+    /*secrets to align text and icons*/
+    line-height: 120%;
+    vertical-align: middle;
+    margin-top: -5px;
+}
